@@ -41,7 +41,7 @@ TUNER<-function (occ, env, bg.coords, occ.grp, bg.grp, method, maxent.args,
         tmpfolder <- tempfile()
         full.mod <- maxent(x, p, args = maxent.args[[i]], factors = categoricals, 
             path = tmpfolder)
-        pred.args <- c("outputformat=logistic", ifelse(clamp == TRUE, 
+        pred.args <- c("outputformat=logistic", ifelse(clamp == TRUE, ### This line contains edits for logistic output
             "doclamp=true", "doclamp=false"))
         if (rasterPreds == TRUE) {
             predictive.map <- predict(full.mod, env, args = pred.args)

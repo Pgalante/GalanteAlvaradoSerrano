@@ -25,7 +25,7 @@ ENMEVAL<-function (occ, env, bg.coords = NULL, occ.grp = NULL, bg.grp = NULL,
                   ifelse(method == "randomkfold", "Doing random k-fold evaluation groups...", 
                     ifelse(method == "user", "Doing user-defined evaluation groups...", 
                       "Error: You need to specify an accepted evaluation method. Check the documentation.")))))))
-    results <- TUNER(occ, env, bg.coords, occ.grp, bg.grp, method, 
+    results <- TUNER(occ, env, bg.coords, occ.grp, bg.grp, method, ### This line is edited
         maxent.args, args.lab, categoricals, aggregation.factor, 
         kfolds, bin.output, clamp, rasterPreds, parallel, numCores)
     if (overlap == TRUE) {

@@ -18,19 +18,19 @@ rm(list=ls())
 # source("C:/Users/pgalante/Documents/Projects/PJG/Function_to_source/sample_raster_by_prob.R")
 # source("C:/Users/pgalante/Documents/Projects/PJG/Function_to_source/variable_removal.R")
 
-setwd('/home/pgalante/variableimportance/15Locs/functions')
+setwd('variableimportance/15Locs/functions')
 for (i in c(1,3:length(list.files(full.names = T, pattern = '\\.R$')))){
   source(list.files(full.names = T, pattern = '\\.R$')[[i]])
 }
 ### Define categorical variable
 cat.vars='geosimp'
 ###### This will create the niche and localities
-createniche(envdir='/home/pgalante/Env', wd='/home/pgalante/variableimportance/15Locs',
+createniche(envdir='/Env', wd='/variableimportance/15Locs',
             packages = c('ENMeval', 'virtualspecies', 'rgdal', 'maptools', 'foreach','doParallel'), 
             nsets=100, download=F, cont.vars=c('bio1', 'bio12'), 
             cat.vars, means=c(260, 1400),
             SDs= c(50, 500), cats=c(6, 7), cat.vals=c(0.7,0.3), backg=NULL,
-            res=0.5, long=43.00, lats=-26.5, locsdir='/home/pgalante/variableimportance/15Locs/locs',
+            res=0.5, long=43.00, lats=-26.5, locsdir='/variableimportance/15Locs/locs',
             max.corr=0.75, numlocs=15)
 
 ###### Define which variables are categorical
@@ -91,58 +91,58 @@ res1A<-resA[[1]]
 for (i in 2:100){
   res1A<-rbind(res1A, resA[[i]])
 }
-write.csv(res1A, '/home/pgalante/variableimportance/15Locs/results/res1A.csv')
+write.csv(res1A, '/variableimportance/15Locs/results/res1A.csv')
 
 res1B<-list()
 res1B<-resB[[1]]
 for (i in 2:100){
   res1B<-rbind(res1B, resB[[i]])
 }
-write.csv(res1B, '/home/pgalante/variableimportance/15Locs/results/res1B.csv')
+write.csv(res1B, '/variableimportance/15Locs/results/res1B.csv')
 
 res1C<-list()
 res1C<-resC[[1]]
 for (i in 2:100){
   res1C<-rbind(res1C, resC[[i]])
 }
-write.csv(res1C, '/home/pgalante/variableimportance/15Locs/results/res1C.csv')
+write.csv(res1C, '/variableimportance/15Locs/results/res1C.csv')
 
 res1D<-list()
 res1D<-resD[[1]]
 for (i in 2:100){
   res1D<-rbind(res1D, resD[[i]])
 }
-write.csv(res1D, '/home/pgalante/variableimportance/15Locs/results/res1D.csv')
+write.csv(res1D, '/variableimportance/15Locs/results/res1D.csv')
 
 D1s<-list()
 D1s<-D1[[1]]
 for (i in 2:100){
   D1s<-rbind(D1s, D1[[i]])
 }
-write.csv(D1s, '/home/pgalante/variableimportance/15Locs/D_values/D1s.csv')
+write.csv(D1s, '/variableimportance/15Locs/D_values/D1s.csv')
 
 D2s<-list()
 D2s<-D2[[1]]
 for (i in 2:100){
   D2s<-rbind(D2s, D2[[i]])
 }
-write.csv(D2s, '/home/pgalante/variableimportance/15Locs/D_values/D2s.csv')
+write.csv(D2s, '/variableimportance/15Locs/D_values/D2s.csv')
 
 D3s<-list()
 D3s<-D3[[1]]
 for (i in 2:100){
   D3s<-rbind(D3s, D3[[i]])
 }
-write.csv(D3s, '/home/pgalante/variableimportance/15Locs/D_values/D3s.csv')
+write.csv(D3s, '/variableimportance/15Locs/D_values/D3s.csv')
 
 D4s<-list()
 D4s<-D4[[1]]
 for (i in 2:100){
   D4s<-rbind(D4s, D4[[i]])
 }
-write.csv(D4s, '/home/pgalante/variableimportance/15Locs/D_values/D4s.csv')
+write.csv(D4s, '/variableimportance/15Locs/D_values/D4s.csv')
 
-setwd('/home/pgalante/variableimportance/15Locs/optsets')
+setwd('/variableimportance/15Locs/optsets')
 write.csv(optsets1, 'optsetsAll.csv')
 write.csv(optsets2, 'optsetsImp.csv')
 write.csv(optsets3, 'optsetsLCcont.csv')
